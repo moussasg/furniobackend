@@ -3,6 +3,9 @@
 const bcrypt = require('bcrypt'); // library in the Node.js for hashing passwords securely.
 const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({ //
+  urname : {
+    type: String
+  },
     email: {
       type: String,
       required: [true, 'Please enter an email'],

@@ -72,12 +72,13 @@ const createToken = (id) => {// on introduit a intérieur des posts dans const t
   });
 };
 const signup_post = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password , urname } = req.body;
     try {
-      const user = await User.create({ email, password });
+      const user = await User.create({ email, password  , urname});
       const token = createToken(user._id);
       res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
       res.status(200).json({ success: true, user: user._id , token });
+      console.log(`urname : ${urname} , email : ${email} , password : ${password}`)
     }
     catch (err) {
       const errors = handleErrors(err);
