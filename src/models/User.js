@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({ //
     this.password = await bcrypt.hash(this.password , salt);
     next();
   });
-  userSchema.statics.login = async function(email, password) {
+  userSchema.statics.login = async function(email, password , urname) {
     const user = await this.findOne({ email });
     if (user) {
       const auth = await bcrypt.compare(password, user.password);
