@@ -8,7 +8,7 @@ const authController = require('./src/controllers/authController')
 const {checkUser } = require('./src/controllers/authController')
 dotenv.config();
 app.use(cors({  
-  origin: 'https://furnio-frontend-ebkgtobww-moussasg.vercel.app',  // url front-end
+  origin: '*',  // url front-end
   methods: 'GET, POST',
   credentials: true, // Allow credentials
 }));// Set up CORS headers manually
