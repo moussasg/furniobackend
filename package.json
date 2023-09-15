@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "start": "yarn && node index.js",
-    "build": "yarn && node index.js"
+    "start": "node index.js",
+    "build": "yarn && nodemon index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
