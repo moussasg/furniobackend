@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "node index.js",
-    "build": "yarn && node index.js"
+    "build": "yarn"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
