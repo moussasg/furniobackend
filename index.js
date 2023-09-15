@@ -10,7 +10,7 @@ dotenv.config();
 app.use(cors({  
   origin: '*',  // url front-end
   methods: 'GET, POST',
-  credentials: true, // Allow credentials
+  //credentials: true, // Allow credentials
 }));// Set up CORS headers manually
 app.use(express.json());
 app.use(cookieParser());
