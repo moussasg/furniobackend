@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "commonjs",
+  
   "scripts": {
     "start": "yarn && node index.js",
-    "build": "yarn && node index.js"
+    "dev": "yarn && node index.js",
+    "build": "yarn && node index.js",
+    "preview": "yarn && node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

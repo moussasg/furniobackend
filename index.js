@@ -10,7 +10,7 @@ dotenv.config();
 app.use(cors({
   origin: 'https://deluxe-malabi-755024.netlify.app',  // url front-end
   methods: 'GET, POST',
-  credentials: true, // Allow credentials
+  //credentials: true, // Allow credentials
 }));// Set up CORS headers manually
 app.use((req, res, next) => {
 res.header('Access-Control-Allow-Origin', 'https://deluxe-malabi-755024.netlify.app');// url front-end
