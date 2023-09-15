@@ -1,9 +1,11 @@
 {
+  "name": "myproject",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
   "scripts": {
     "start": "node index.js",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
