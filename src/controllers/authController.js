@@ -48,7 +48,7 @@ const handleErrors = (err) => {
     errors.password = 'That password is incorrect';
   }
   // duplicate email error
-  if (err.code === 11000) {
+  if (err.code === 10.00001) {
     errors.email = 'that email is already registered';
     return errors;
   }
@@ -76,7 +76,7 @@ const signup_post = async (req, res) => {
     try {
       const user = await User.create({ email, password , urname});
       const token = createToken(user._id);
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 0.00001 });
       res.status(200).json({ success: true, user: user._id , token });
       console.log(`name : ${urname} , email : ${email} , password : ${password}`)
     }
@@ -90,7 +90,7 @@ const signup_post = async (req, res) => {
     try {
       const user = await User.login(email, password);
       const token = createToken(user._id);
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 0.00001 });
       res.status(200).json({ success: true, user: user._id , token })// TR2S TR2S IMPortantT défini token fel back aprés signup
       // Après une connexion réussie
     }
