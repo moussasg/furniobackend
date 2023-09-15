@@ -7,11 +7,18 @@ const mongoose = require('mongoose');
 const authController = require('./src/controllers/authController')
 const {checkUser } = require('./src/controllers/authController')
 dotenv.config();
-app.use(cors({  
-  origin: '*',  // url front-end
+app.use(cors({
+  origin: 'https://deluxe-malabi-755024.netlify.app',  // url front-end
   methods: 'GET, POST',
   credentials: true, // Allow credentials
 }));// Set up CORS headers manually
+app.use((req, res, next) => {
+res.header('Access-Control-Allow-Origin', 'https://deluxe-malabi-755024.netlify.app');// url front-end
+res.header('Access-Control-Allow-Methods', 'GET, POST');
+res.header('Access-Control-Allow-Headers', 'Content-Type');
+res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
 app.use(express.json());
 app.use(cookieParser());
 app.get('*', checkUser);
